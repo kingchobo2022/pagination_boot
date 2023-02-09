@@ -1,0 +1,47 @@
+# db 생성
+CREATE DATABASE kingchobo;
+
+# 생성된 db 확인
+SHOW DATABASES;
+
+# db 사용
+USE kingchobo;
+
+# table 생성
+CREATE TABLE freeboard(
+idx INT UNSIGNED NOT NULL AUTO_INCREMENT,
+`subject` VARCHAR(255) DEFAULT '',
+`content` TEXT,
+`author` VARCHAR(50) DEFAULT '',
+`rdate` DATETIME,
+PRIMARY KEY(idx)
+);
+
+# 생성된 table 확인
+SHOW TABLES;
+
+# 생성된 table 구조 확인
+DESC freeboard;
+
+# 데이터 입력
+INSERT INTO freeboard(`subject`,`content`,`author`,`rdate`)
+VALUES ('오늘 날씨 좋아요','내용1','홍길동',NOW())
+,('오늘 날씨 좋아요111','내용1','김홍길동',NOW())
+,('오늘 날씨 좋아요112','내용2','김홍길',NOW())
+,('오늘 날씨 좋아요213','내용3','김홍동',NOW())
+,('오늘 날씨 좋아요214','내용4','홍김길',NOW())
+,('오늘 날씨 좋아요215','내용4','홍길김',NOW())
+,('오늘 날씨 좋아요216','내용4','홍길김',NOW())
+,('오늘 날씨 좋아요217','내용4','홍김길',NOW())
+,('오늘 날씨 좋아요213','내용3','김홍동',NOW())
+,('오늘 날씨 좋아요214','내용4','홍김길',NOW())
+,('오늘 날씨 좋아요215','내용4','홍길김',NOW())
+,('오늘 날씨 좋아요216','내용4','홍길김',NOW())
+,('오늘 날씨 좋아요217','내용4','홍김길',NOW())
+;
+
+# 입력된 데이터 확인
+SELECT * FROM freeboard LIMIT 0, 100;
+
+# 입력된 데이터 확인 ( 특정 필드만 ) 보기
+SELECT subject, content FROM freeboard LIMIT 0, 100;
