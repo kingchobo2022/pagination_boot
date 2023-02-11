@@ -57,6 +57,7 @@ foreach($rs as $row) {
 }
 
 echo "</table>";
+  
 
 
 $rs_str = my_pagination($total, $limit, $page_limit, $page) ;
